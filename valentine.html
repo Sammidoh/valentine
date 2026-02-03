@@ -1,1 +1,124 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine? 💘</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9e1e8, #f8bbd0);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 25px;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+h1 {
+  color: #d81b60;
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin: 1.5rem 0;
+  color: #6a1b9a;
+}
+
+.buttons {
+  margin-top: 2rem;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yesBtn {
+  background: #ec407a;
+  color: white;
+}
+
+#noBtn {
+  background: #e0e0e0;
+}
+
+#response {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  color: #c2185b;
+}
+
+#loveVideo {
+  display: none;
+  margin-top: 2rem;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(216,27,96,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>❤️ Hey My Love ❤️</h1>
+  <h2>Will you be my Valentine? 💖</h2>
+
+  <div class="buttons">
+    <button id="yesBtn" onclick="yesClicked()">Yes 💕</button>
+    <button id="noBtn" onclick="noClicked()">No 😭</button>
+  </div>
+
+  <div id="response"></div>
+
+  <!-- VIDEO -->
+  <video id="loveVideo" controls playsinline muted>
+    <source src="love-video.mp4" type="video/mp4">
+    Your browser does not support the video.
+  </video>
+</div>
+
+<script>
+function yesClicked() {
+  const resp = document.getElementById("response");
+  const video = document.getElementById("loveVideo");
+  const buttons = document.querySelector(".buttons");
+
+  resp.innerHTML = "YAAAY!!! 💖💖💖<br>I love you so much 😍";
+  buttons.innerHTML = "";
+
+  video.style.display = "block";
+  video.play();
+  video.scrollIntoView({ behavior: "smooth" });
+}
+
+function noClicked() {
+  document.getElementById("response").innerHTML =
+    "😅 That button doesn’t really work… try again 💕";
+}
+</script>
+
+</body>
+</html>
